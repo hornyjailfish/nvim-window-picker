@@ -67,6 +67,10 @@ local config = {
 		-- selection or not
 		include_current_win = false,
 
+		-- reverse filter options so only the windows that match the filter will
+		-- be included
+		inverse = false,
+
 		-- filter using buffer options
 		bo = {
 			-- if the file type is one of following, the window will be ignored

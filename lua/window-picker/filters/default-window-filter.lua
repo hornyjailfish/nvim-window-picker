@@ -6,6 +6,7 @@ local util = require('window-picker.util')
 --- @field buffer_options table<string, any> buffer options to filter
 --- @field file_name_contains string[] file names to filter
 --- @field file_path_contains string[] file paths to filter
+--- @field inverse boolean reverse the result
 local M = {}
 
 function M:new()
@@ -31,6 +32,7 @@ function M:set_config(config)
 	self.file_name_contains = config.file_name_contains or {}
 	self.file_path_contains = config.file_path_contains or {}
 	self.include_current_win = config.include_current_win
+	self.inverse = config.inverse or false
 end
 
 function M:filter_windows(windows)
@@ -50,13 +52,12 @@ function M:_window_option_filter(windows)
 				local actual_opt = vim.api.nvim_win_get_option(winid, opt_key)
 
 				local has_value = vim.tbl_contains(opt_values, actual_opt)
-
 				if has_value then
-					return false
+					return has_value == self.inverse
 				end
 			end
 
-			return true
+			return true == not self.inverse
 		end)
 	else
 		return windows
@@ -72,13 +73,12 @@ function M:_buffer_options_filter(windows)
 				local actual_opt = vim.api.nvim_buf_get_option(bufid, opt_key)
 
 				local has_value = vim.tbl_contains(opt_values, actual_opt)
-
 				if has_value then
-					return false
+					return has_value == self.inverse
 				end
 			end
 
-			return true
+			return true == not self.inverse
 		end)
 	else
 		return windows
@@ -105,7 +105,7 @@ function M:_file_path_contains_filter(windows)
 				end
 			)
 
-			return not has_match
+			return (not has_match) ~= self.inverse
 		end)
 	else
 		return windows
@@ -131,7 +131,7 @@ function M:_file_name_contains_filter(windows)
 				end
 			)
 
-			return not has_match
+			return (not has_match) ~= self.inverse
 		end)
 	else
 		return windows
