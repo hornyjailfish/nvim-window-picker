@@ -123,6 +123,10 @@ require 'window-picker'.setup({
         -- selection or not
         include_current_win = false,
 
+        -- reverse filtering. Only windows matching filters are included
+        -- autoselect_one and include_current_win still applied
+        reverse = false,
+
         -- filter using buffer options
         bo = {
             -- if the file type is one of following, the window will be ignored
