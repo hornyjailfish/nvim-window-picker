@@ -85,6 +85,7 @@ function M:_buffer_options_filter(windows)
 	end
 end
 
+-- TODO: avoid regex use fname instead
 function M:_file_path_contains_filter(windows)
 	if
 		self.file_path_contains
@@ -105,7 +106,7 @@ function M:_file_path_contains_filter(windows)
 				end
 			)
 
-			return (not has_match) ~= self.inverse
+			return has_match == self.inverse
 		end)
 	else
 		return windows
@@ -120,7 +121,7 @@ function M:_file_name_contains_filter(windows)
 		return util.tbl_filter(windows, function(winid)
 			local bufid = vim.api.nvim_win_get_buf(winid)
 			local filepath = vim.api.nvim_buf_get_name(bufid)
-			local filename = filepath:match('^.*/(.+)$')
+			local filename = vim.call("fnamemodify", filepath, ":t")
 
 			local has_match = util.tbl_any(
 				self.file_name_contains,
@@ -131,7 +132,7 @@ function M:_file_name_contains_filter(windows)
 				end
 			)
 
-			return (not has_match) ~= self.inverse
+			return has_match == self.inverse
 		end)
 	else
 		return windows
