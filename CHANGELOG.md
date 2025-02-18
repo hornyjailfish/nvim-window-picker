@@ -1,5 +1,41 @@
 # Changelog
 
+## [2.3.1](https://github.com/s1n7ax/nvim-window-picker/compare/v2.3.0...v2.3.1) (2025-01-24)
+
+
+### Bug Fixes
+
+* resolve issue 101 ([#102](https://github.com/s1n7ax/nvim-window-picker/issues/102)) ([1deef6d](https://github.com/s1n7ax/nvim-window-picker/commit/1deef6d5caa6ac70bb5d819e51ecb5ec924ea1b2))
+
+## [2.3.0](https://github.com/s1n7ax/nvim-window-picker/compare/v2.2.0...v2.3.0) (2025-01-14)
+
+
+### Features
+
+* add floating letter hint ([#99](https://github.com/s1n7ax/nvim-window-picker/issues/99)) ([bfe4976](https://github.com/s1n7ax/nvim-window-picker/commit/bfe49763dd297d02e5a9fda7ca252890324ef78e))
+
+## [2.2.0](https://github.com/s1n7ax/nvim-window-picker/compare/v2.1.1...v2.2.0) (2025-01-11)
+
+
+### Features
+
+* add filter for snacks notifications ([#97](https://github.com/s1n7ax/nvim-window-picker/issues/97)) ([3639533](https://github.com/s1n7ax/nvim-window-picker/commit/3639533293f20b61c31c2d5a1167fd56dc5955ab))
+
+## [2.1.1](https://github.com/s1n7ax/nvim-window-picker/compare/v2.1.0...v2.1.1) (2025-01-10)
+
+
+### Bug Fixes
+
+* **floating-big-letter:** correct padding and positioning ([#91](https://github.com/s1n7ax/nvim-window-picker/issues/91)) ([c9647c2](https://github.com/s1n7ax/nvim-window-picker/commit/c9647c256c4be5e82f4e01a53bedc78f64b86e27))
+* invalid window id during restoring windows ([#89](https://github.com/s1n7ax/nvim-window-picker/issues/89)) ([fadf015](https://github.com/s1n7ax/nvim-window-picker/commit/fadf015ba4394ac04a0e02534c82e198f0c7e93d)), closes [#88](https://github.com/s1n7ax/nvim-window-picker/issues/88)
+
+## [2.1.0](https://github.com/s1n7ax/nvim-window-picker/compare/v2.0.3...v2.1.0) (2025-01-09)
+
+
+### Features
+
+* add filter for unfocusable windows ([#90](https://github.com/s1n7ax/nvim-window-picker/issues/90)) ([1656a0a](https://github.com/s1n7ax/nvim-window-picker/commit/1656a0a03950f5be1a23146bbbd9f8dbf773a8a9))
+
 ## [2.0.3](https://github.com/s1n7ax/nvim-window-picker/compare/v2.0.1...v2.0.3) (2023-12-17)
 
 

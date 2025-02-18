@@ -57,9 +57,10 @@ behaviour.
 require 'window-picker'.setup({
     -- type of hints you want to get
     -- following types are supported
-    -- 'statusline-winbar' | 'floating-big-letter'
+    -- 'statusline-winbar' | 'floating-big-letter' | 'floating-letter'
     -- 'statusline-winbar' draw on 'statusline' if possible, if not 'winbar' will be
     -- 'floating-big-letter' draw big letter on a floating window
+    -- 'floating-letter' draw letter on a floating window
     -- used
     hint = 'statusline-winbar',
 
@@ -123,14 +124,18 @@ require 'window-picker'.setup({
         -- selection or not
         include_current_win = false,
 
+        -- whether to include windows marked as unfocusable
+        include_unfocusable_windows = false,
+
         -- reverse filtering. Only windows matching filters are included
         -- autoselect_one and include_current_win still applied
         reverse = false,
 
+
         -- filter using buffer options
         bo = {
             -- if the file type is one of following, the window will be ignored
-            filetype = { 'NvimTree', 'neo-tree', 'notify' },
+            filetype = { 'NvimTree', 'neo-tree', 'notify', 'snacks_notif' },
 
             -- if the file type is one of following, the window will be ignored
             buftype = { 'terminal' },
@@ -151,6 +156,7 @@ require 'window-picker'.setup({
     -- You can pass in the highlight name or a table of content to set as
     -- highlight
     highlights = {
+        enabled = true,
         statusline = {
             focused = {
                 fg = '#ededed',

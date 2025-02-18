@@ -70,11 +70,13 @@ local config = {
 		-- reverse filter options so only the windows that match the filter will
 		-- be included
 		inverse = false,
+		-- whether to include windows marked as unfocusable
+		include_unfocusable_windows = false,
 
 		-- filter using buffer options
 		bo = {
 			-- if the file type is one of following, the window will be ignored
-			filetype = { 'NvimTree', 'neo-tree', 'notify' },
+			filetype = { 'NvimTree', 'neo-tree', 'notify', 'snacks_notif' },
 
 			-- if the file type is one of following, the window will be ignored
 			buftype = { 'terminal' },
